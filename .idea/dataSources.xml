@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3548200585">
+    <data-source source="LOCAL" name="PostgreSQL - seurb@localhost" uuid="aa93d3e2-a8c0-4350-b1e6-3cb6ac9be17d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/seurb</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - seurb@localhost" uuid="aa93d3e2-a8c0-4350-b1e6-3cb6ac9be17d">
+    <database-info product="PostgreSQL" version="9.0.18" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <schema name="public" catalog="seurb"/>
+    <table name="arrecadacao" schema="public" catalog="seurb" type="TABLE">
+      <column name="nome_arquivo" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="data_arrecada" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="nr_guia" sqlType="varchar" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_parcela" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_banco" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_banco" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_valor" sqlType="numeric" precision="20" scale="2" nullable="true" jdbcType="2"/>
+      <column name="data_carga" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="nr_leitura" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="tributo" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="gerar_dam" schema="public" catalog="seurb" type="TABLE">
+      <column name="nr_dam" sqlType="varchar" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="gerar_dam_pkey" columns="nr_dam"/>
+    </table>
+    <table name="tablefunc_crosstab_2" schema="public" catalog="seurb" type="TYPE">
+      <column name="row_name" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_1" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_2" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="tablefunc_crosstab_3" schema="public" catalog="seurb" type="TYPE">
+      <column name="row_name" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_1" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_2" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_3" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="tablefunc_crosstab_4" schema="public" catalog="seurb" type="TYPE">
+      <column name="row_name" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_1" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_2" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_3" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="category_4" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="tbl_aplicacoes" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_aplicacao" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_aplicacao" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="tbl_aplicacoes_pkey" columns="cd_aplicacao"/>
+      <exported-key name="tbl_perfil_aplicacoes_cd_aplicacao_fkey" table="tbl_perfil_aplicacoes" schema="public" catalog="seurb" columns="cd_aplicacao"/>
+    </table>
+    <table name="tbl_dam" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_orgao" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cd_tipodocumento" sqlType="bpchar" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="cd_usoatividade" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cd_tributo" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nr_sequencia" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nr_guia" sqlType="varchar" precision="13" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_ordem" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="vl_dam" sqlType="numeric" precision="15" scale="2" nullable="true" jdbcType="2"/>
+      <column name="dt_vencimento" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="dt_emissao" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="ds_situacao" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_parcela" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dt_tramite" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="nr_processo" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nr_ano" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="cd_rota" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cd_barras" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cd_barras_dv" sqlType="varchar" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="dt_pagamento" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="vl_ufir" sqlType="numeric" precision="10" scale="2" nullable="true" jdbcType="2"/>
+      <column name="ds_observacao" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cd_valor_documento" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX2RhbV9pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <primary-key name="tbl_dam_pkey" columns="cd_orgao,cd_tributo,nr_sequencia,nr_parcela,cd_rota,nr_ano,nr_processo"/>
+      <foreign-key name="tbl_dam_cd_tipodocumento_fkey" columns="cd_tipodocumento" ref-table="tbl_tipodocumento" ref-schema="public" ref-catalog="" ref-columns="cd_tipodocumento" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_dam_fk" columns="cd_valor_documento" ref-table="tbl_valor_documento" ref-schema="public" ref-catalog="" ref-columns="cd_valor_documento" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="tbl_dam_id_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_documentoexigido_rota" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_rota" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cd_documentoexigido" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="tbl_documentoexigido_rota_pkey" columns="cd_rota,cd_documentoexigido"/>
+      <foreign-key name="tbl_documentoexigido_rota_cd_documentoexigido_fkey" columns="cd_documentoexigido" ref-table="tbl_documentosexigidos" ref-schema="public" ref-catalog="" ref-columns="cd_documentoexigido" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_documentoexigido_rota_cd_rota_fkey" columns="cd_rota" ref-table="tbl_rotas" ref-schema="public" ref-catalog="" ref-columns="cd_rota" update-rule="1" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="tbl_documentosanexos" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_documentoanexo" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX2RvY3VtZW50b3NhbmV4b3NfY2RfZG9jdW1lbnRvYW5leG9fc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="nr_processo" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nr_ano" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="dt_anexo" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="ds_path_arquivo" sqlType="bytea" precision="2147483647" scale="0" nullable="true" jdbcType="-2"/>
+      <column name="nm_documentoanexo" sqlType="varchar" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="tbl_documentosanexos_pkey" columns="cd_documentoanexo"/>
+    </table>
+    <table name="tbl_documentosanexos_cd_documentoanexo_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_documentosexigidos" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_documentoexigido" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX2RvY3VtZW50b3NleGlnaWRvc19jZF9kb2N1bWVudG9leGlnaWRvX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="nm_documentoexigido" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_documentoexigido" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="tbl_documentosexigidos_pkey" columns="cd_documentoexigido"/>
+      <exported-key name="tbl_documentoexigido_rota_cd_documentoexigido_fkey" table="tbl_documentoexigido_rota" schema="public" catalog="seurb" columns="cd_documentoexigido"/>
+    </table>
+    <table name="tbl_documentosexigidos_cd_documentoexigido_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_interessados" schema="public" catalog="seurb" type="TABLE">
+      <column name="nr_cpf" sqlType="bpchar" precision="14" scale="0" nullable="false" jdbcType="1"/>
+      <column name="nm_interessado" sqlType="varchar" precision="80" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nr_matricula" sqlType="bpchar" precision="10" scale="0" nullable="true" jdbcType="1"/>
+      <column name="ds_endereco" sqlType="varchar" precision="120" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_email" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="vl_senha" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nr_endereco" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_complemento" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_cep" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_bairro" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nm_cidade" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_uf" sqlType="bpchar" precision="2" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="tbl_interessados_pkey" columns="nr_cpf"/>
+      <exported-key name="tbl_processos_nr_cpf_fkey" table="tbl_processos" schema="public" catalog="seurb" columns="nr_cpf"/>
+    </table>
+    <table name="tbl_logs" schema="public" catalog="seurb" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX2xvZ3NfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="ds_tabela" sqlType="varchar" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_conteudo" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="dt_log" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="cd_op" sqlType="bpchar" precision="1" scale="0" nullable="true" jdbcType="1" remarks="VSAtIFVwZGF0ZSwgRCAtIGRlbGV0ZSwgSSAtIGluc2VydA=="/>
+      <column name="ds_usuario" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="tbl_logs_pkey" columns="id"/>
+    </table>
+    <table name="tbl_logs_id_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_lotacao" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_lotacao" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX2xvdGFjYW9fY2RfbG90YWNhb19zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="nr_matricula" sqlType="varchar" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cd_setor" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="st_lotacao" sqlType="bpchar" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="tbl_lotacao_pkey" columns="cd_lotacao,nr_matricula,cd_setor"/>
+      <foreign-key name="tbl_lotacao_cd_setor_fkey" columns="cd_setor" ref-table="tbl_setor" ref-schema="public" ref-catalog="" ref-columns="cd_setor" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_lotacao_nr_matricula_fkey" columns="nr_matricula" ref-table="tbl_usuario" ref-schema="public" ref-catalog="" ref-columns="nr_matricula" update-rule="1" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="tbl_lotacao_cd_lotacao_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_papeis" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_papel" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3BhcGVpc19jZF9wYXBlbF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="nm_papel" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_papel" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="tbl_papeis_pkey" columns="cd_papel"/>
+      <exported-key name="tbl_rotas_cd_papel_fkey" table="tbl_rotas" schema="public" catalog="seurb" columns="cd_papel"/>
+    </table>
+    <table name="tbl_papeis_cd_papel_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_perfil" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_perfil" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3BlcmZpbF9jZF9wZXJmaWxfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="ds_perfil" sqlType="varchar" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="tbl_perfil_pkey" columns="cd_perfil"/>
+      <exported-key name="tbl_perfil_aplicacoes_cd_perfil_fkey" table="tbl_perfil_aplicacoes" schema="public" catalog="seurb" columns="cd_perfil"/>
+      <exported-key name="tbl_usuario_cd_perfil_fkey" table="tbl_usuario" schema="public" catalog="seurb" columns="cd_perfil"/>
+    </table>
+    <table name="tbl_perfil_aplicacoes" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_aplicacao" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cd_perfil" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="tbl_perfil_aplicacoes_pkey" columns="cd_aplicacao,cd_perfil"/>
+      <foreign-key name="tbl_perfil_aplicacoes_cd_aplicacao_fkey" columns="cd_aplicacao" ref-table="tbl_aplicacoes" ref-schema="public" ref-catalog="" ref-columns="cd_aplicacao" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_perfil_aplicacoes_cd_perfil_fkey" columns="cd_perfil" ref-table="tbl_perfil" ref-schema="public" ref-catalog="" ref-columns="cd_perfil" update-rule="1" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="tbl_perfil_cd_perfil_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_processos" schema="public" catalog="seurb" type="TABLE">
+      <column name="nr_processo" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3Byb2Nlc3Nvc19ucl9wcm9jZXNzbyc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="nr_ano" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="nr_cpf" sqlType="bpchar" precision="14" scale="0" nullable="false" jdbcType="1"/>
+      <column name="cd_tipoprocesso" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dt_abertura_processo" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="st_processo" sqlType="bpchar" precision="1" scale="0" nullable="false" jdbcType="1" def="J0En"/>
+      <column name="nr_matricula" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cd_secretaria" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="st_processoweb" sqlType="bpchar" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="ds_processo" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_encerramento" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="dt_encerramento" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
+      <column name="st_anonimo" sqlType="bpchar" precision="1" scale="0" nullable="true" jdbcType="1" def="J04n"/>
+      <column name="ds_endereco" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_endereco" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_complemtento" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nr_cep" sqlType="varchar" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_bairro" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nm_cidade" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ds_uf" sqlType="bpchar" precision="2" scale="0" nullable="true" jdbcType="1"/>
+      <column name="ds_complemento" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="tbl_processos_pkey" columns="nr_processo,nr_ano"/>
+      <foreign-key name="tbl_processos_nr_cpf_fkey" columns="nr_cpf" ref-table="tbl_interessados" ref-schema="public" ref-catalog="" ref-columns="nr_cpf" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_processos_cd_secretaria_fkey" columns="cd_secretaria" ref-table="tbl_secretaria" ref-schema="public" ref-catalog="" ref-columns="cd_secretaria" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_processos_cd_tipoprocesso_fkey" columns="cd_tipoprocesso" ref-table="tbl_tipoprocesso" ref-schema="public" ref-catalog="" ref-columns="cd_tipoprocesso" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_processos_nr_matricula_fkey" columns="nr_matricula" ref-table="tbl_usuario" ref-schema="public" ref-catalog="" ref-columns="nr_matricula" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="tbl_valor_documento_fk" table="tbl_valor_documento" schema="public" catalog="seurb" columns="nr_processo,nr_ano"/>
+    </table>
+    <table name="tbl_processos_nr_processo" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_receitas" schema="public" catalog="seurb" type="TABLE">
+      <column name="id_receita" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3JlY2VpdGFzX2lkX3JlY2VpdGFfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="nr_guia" sqlType="varchar" precision="13" scale="0" nullable="false" jdbcType="12"/>
+      <column name="vl_pago" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="dt_pagamento" sqlType="date" precision="13" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="tbl_receitas_pkey" columns="id_receita"/>
+    </table>
+    <table name="tbl_receitas_id_receita_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_regras" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_regra" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3JlZ3Jhc19jZF9yZWdyYV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="cd_tipoprocesso" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nm_regra" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_regra" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="tbl_regras_pkey" columns="cd_regra"/>
+      <foreign-key name="tbl_regras_cd_tipoprocesso_fkey" columns="cd_tipoprocesso" ref-table="tbl_tipoprocesso" ref-schema="public" ref-catalog="" ref-columns="cd_tipoprocesso" update-rule="1" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="tbl_regras_cd_regra_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_rotas" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_rota" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3JvdGFzX2NkX3JvdGFfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="cd_setor" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cd_tipoprocesso" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cd_papel" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="cd_prioridade" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="nm_rota" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="st_rota_paralela" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="nr_ordemrota" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="nr_prazo_rota" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="cd_tipodocumento" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="tbl_rotas_pkey" columns="cd_rota"/>
+      <foreign-key name="tbl_rotas_cd_papel_fkey" columns="cd_papel" ref-table="tbl_papeis" ref-schema="public" ref-catalog="" ref-columns="cd_papel" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_rotas_cd_setor_fkey" columns="cd_setor" ref-table="tbl_setor" ref-schema="public" ref-catalog="" ref-columns="cd_setor" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="tbl_documentoexigido_rota_cd_rota_fkey" table="tbl_documentoexigido_rota" schema="public" catalog="seurb" columns="cd_rota"/>
+    </table>
+    <table name="tbl_rotas_cd_rota_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_secretaria" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_secretaria" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3NlY3JldGFyaWFfY2Rfc2VjcmV0YXJpYV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="nm_secretaria" sqlType="varchar" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sg_secretaria" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="tbl_secretaria_pkey" columns="cd_secretaria"/>
+      <exported-key name="tbl_processos_cd_secretaria_fkey" table="tbl_processos" schema="public" catalog="seurb" columns="cd_secretaria"/>
+      <exported-key name="tbl_setor_cd_secretaria_fkey" table="tbl_setor" schema="public" catalog="seurb" columns="cd_secretaria"/>
+      <exported-key name="tbl_tipoprocesso_cd_secretaria_fkey" table="tbl_tipoprocesso" schema="public" catalog="seurb" columns="cd_secretaria"/>
+      <exported-key name="tbl_usuario_fk" table="tbl_usuario" schema="public" catalog="seurb" columns="cd_secretaria"/>
+    </table>
+    <table name="tbl_secretaria_cd_secretaria_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_setor" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_setor" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3NldG9yX2NkX3NldG9yX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="cd_secretaria" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nm_setor" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_setor" sqlType="varchar" precision="120" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="tbl_setor_pkey" columns="cd_setor"/>
+      <foreign-key name="tbl_setor_cd_secretaria_fkey" columns="cd_secretaria" ref-table="tbl_secretaria" ref-schema="public" ref-catalog="" ref-columns="cd_secretaria" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="tbl_lotacao_cd_setor_fkey" table="tbl_lotacao" schema="public" catalog="seurb" columns="cd_setor"/>
+      <exported-key name="tbl_rotas_cd_setor_fkey" table="tbl_rotas" schema="public" catalog="seurb" columns="cd_setor"/>
+      <exported-key name="tbl_tramites_fk" table="tbl_tramites" schema="public" catalog="seurb" columns="cd_setor"/>
+    </table>
+    <table name="tbl_setor_cd_setor_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_tipodocumento" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_tipodocumento" sqlType="bpchar" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="sg_tipodocumento" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_tipodocumento" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cd_secretaria" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="st_documento_exclusivo" sqlType="bpchar" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="tbl_tipodocumento_pkey" columns="cd_tipodocumento"/>
+      <exported-key name="tbl_dam_cd_tipodocumento_fkey" table="tbl_dam" schema="public" catalog="seurb" columns="cd_tipodocumento"/>
+      <exported-key name="tbl_usoatividade_cd_tipodocumento_fkey" table="tbl_usoatividade" schema="public" catalog="seurb" columns="cd_tipodocumento"/>
+    </table>
+    <table name="tbl_tipoprocesso" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_tipoprocesso" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3RpcG9wcm9jZXNzb19jZF90aXBvcHJvY2Vzc29fc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="cd_secretaria" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nm_tipoprocesso" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ds_tipoprocesso" sqlType="varchar" precision="120" scale="0" nullable="true" jdbcType="12"/>
+      <column name="st_confirmacao_presencia" sqlType="bpchar" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="st_abrir_internet" sqlType="bpchar" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="tbl_tipoprocesso_pkey" columns="cd_tipoprocesso"/>
+      <foreign-key name="tbl_tipoprocesso_cd_secretaria_fkey" columns="cd_secretaria" ref-table="tbl_secretaria" ref-schema="public" ref-catalog="" ref-columns="cd_secretaria" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="tbl_processos_cd_tipoprocesso_fkey" table="tbl_processos" schema="public" catalog="seurb" columns="cd_tipoprocesso"/>
+      <exported-key name="tbl_regras_cd_tipoprocesso_fkey" table="tbl_regras" schema="public" catalog="seurb" columns="cd_tipoprocesso"/>
+    </table>
+    <table name="tbl_tipoprocesso_cd_tipoprocesso_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_tramites" schema="public" catalog="seurb" type="TABLE">
+      <column name="dt_tramite" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93" def="bm93KCk="/>
+      <column name="nr_processo" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nr_ano" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
+      <column name="cd_setor" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nr_matricula" sqlType="varchar" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="st_tramite" sqlType="bpchar" precision="1" scale="0" nullable="false" jdbcType="1" def="J0Un" remarks="RSAtIEVzcGVyYSwgUiAtIFJlY2ViaWRvLCBUIC0gVHJhbWl0YWRvLCBGIC0gRmluYWxpemFkbywgRCAtIERlZmVyaWRvLCBJIC0gSW5kZWZlcmlkbw=="/>
+      <column name="ds_dispacho" sqlType="text" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dt_recebimento" sqlType="timestamp" precision="22" scale="0" nullable="true" jdbcType="93"/>
+      <column name="cd_rota" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="tbl_tramites_pkey" columns="dt_tramite,nr_processo,nr_ano,cd_setor"/>
+      <foreign-key name="tbl_tramites_fk" columns="cd_setor" ref-table="tbl_setor" ref-schema="public" ref-catalog="" ref-columns="cd_setor" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="tbl_tramites_nr_matricula_fkey" columns="nr_matricula" ref-table="tbl_usuario" ref-schema="public" ref-catalog="" ref-columns="nr_matricula" update-rule="1" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="tbl_ufir" schema="public" catalog="seurb" type="TABLE">
+      <column name="nr_ano" sqlType="numeric" precision="4" scale="0" nullable="false" jdbcType="2"/>
+      <column name="vl_ufir" sqlType="money" precision="2147483647" scale="0" nullable="true" jdbcType="8"/>
+      <primary-key name="tbl_ufir_pkey" columns="nr_ano"/>
+    </table>
+    <table name="tbl_usoatividade" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_usoatividade" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3Vzb2F0aXZpZGFkZV9jZF91c29hdGl2aWRhZGVfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="cd_documento" sqlType="bpchar" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="ds_usoatividade" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nr_qtdufir" sqlType="money" precision="2147483647" scale="0" nullable="false" jdbcType="8"/>
+      <column name="cd_tipodocumento" sqlType="bpchar" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="nr_sequencia" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="tbl_usoatividade_pkey" columns="cd_usoatividade"/>
+      <foreign-key name="tbl_usoatividade_cd_tipodocumento_fkey" columns="cd_tipodocumento" ref-table="tbl_tipodocumento" ref-schema="public" ref-catalog="" ref-columns="cd_tipodocumento" update-rule="1" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="tbl_usoatividade_cd_usoatividade_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="tbl_usuario" schema="public" catalog="seurb" type="TABLE">
+      <column name="nr_matricula" sqlType="varchar" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cd_perfil" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nm_usuario" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="vl_senha" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cd_secretaria" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="tbl_usuario_pkey" columns="nr_matricula"/>
+      <foreign-key name="tbl_usuario_cd_perfil_fkey" columns="cd_perfil" ref-table="tbl_perfil" ref-schema="public" ref-catalog="" ref-columns="cd_perfil" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="tbl_usuario_fk" columns="cd_secretaria" ref-table="tbl_secretaria" ref-schema="public" ref-catalog="" ref-columns="cd_secretaria" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tbl_lotacao_nr_matricula_fkey" table="tbl_lotacao" schema="public" catalog="seurb" columns="nr_matricula"/>
+      <exported-key name="tbl_processos_nr_matricula_fkey" table="tbl_processos" schema="public" catalog="seurb" columns="nr_matricula"/>
+      <exported-key name="tbl_tramites_nr_matricula_fkey" table="tbl_tramites" schema="public" catalog="seurb" columns="nr_matricula"/>
+    </table>
+    <table name="tbl_valor_documento" schema="public" catalog="seurb" type="TABLE">
+      <column name="cd_valor_documento" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGJsX3ZhbG9yX2RvY3VtZW50b19jZF92YWxvcl9kb2N1bWVudG9fc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
+      <column name="nr_processo" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="nr_ano" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="vl_documento" sqlType="numeric" precision="15" scale="2" nullable="true" jdbcType="2"/>
+      <column name="dt_lancamento" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="nr_parcelas" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="vl_ufir_usada" sqlType="numeric" precision="15" scale="2" nullable="true" jdbcType="2"/>
+      <primary-key name="tbl_valor_documento_pkey" columns="cd_valor_documento"/>
+      <foreign-key name="tbl_valor_documento_fk" columns="nr_processo,nr_ano" ref-table="tbl_processos" ref-schema="public" ref-catalog="" ref-columns="nr_processo,nr_ano" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="tbl_dam_fk" table="tbl_dam" schema="public" catalog="seurb" columns="cd_valor_documento"/>
+    </table>
+    <table name="tbl_valor_documento_cd_valor_documento_seq" schema="public" catalog="seurb" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <procedure name="fun_audicad" schema="public" catalog="seurb" type="2">
+      <prototype>
+        <parameter name="returnValue" sqlType="trigger" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="pg_file_length" schema="public" catalog="seurb" type="2">
+      <prototype>
+        <parameter name="$1" sqlType="text" precision="0" scale="0" nullable="true" jdbcType="12" type="1" index="1"/>
+        <parameter name="returnValue" sqlType="int8" precision="0" scale="0" nullable="true" jdbcType="-5" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="plpgsql_call_handler" schema="public" catalog="seurb" type="2">
+      <prototype>
+        <parameter name="returnValue" sqlType="language_handler" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="plpgsql_validator" schema="public" catalog="seurb" type="2">
+      <prototype>
+        <parameter name="$1" sqlType="oid" precision="0" scale="0" nullable="true" jdbcType="-5" type="1" index="1"/>
+        <parameter name="returnValue" sqlType="void" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="tbl_perfil_fn" schema="public" catalog="seurb" type="2">
+      <prototype>
+        <parameter name="returnValue" sqlType="trigger" precision="0" scale="0" nullable="true" jdbcType="1111" type="5" index="0"/>
+      </prototype>
+    </procedure>
+  </data-source>
+</component>

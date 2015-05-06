@@ -9,9 +9,7 @@ import javax.persistence.Query;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
@@ -31,8 +29,8 @@ public class Main {
             String sql = "select \n" +
                     "	id, \n" +
                     "	nr_guia as guia, \n" +
-                    "	to_char(max(dt_emissao),'DDMMYYYY') as emissao, \n" +
-                    "	to_char(max(dt_vencimento),'DDMMYYYY') as vencimento , \n" +
+                    "	to_char(max(dt_emissao),'YYYYMMDD') as emissao, \n" +
+                    "	to_char(max(dt_vencimento),'YYYYMMDD') as vencimento , \n" +
                     "	max(vl_dam) * (select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as valor, \n" +
                     "	(select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as parcelas, \n" +
                     "	max(cd_barras) as codigoBarras, \n" +
@@ -94,8 +92,15 @@ public class Main {
             }
 
             System.out.println("Qtd "+damsNovas.size());
-            String path = "/Users/domingos/temp/seurb/financeiro.txt";
-            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
+            String path = "/home/domingos/tmp/seurb/";
+
+            Calendar c = Calendar.getInstance();
+
+            String nomeArquivo = "FINANCEIRO-"+String.valueOf(c.DAY_OF_MONTH)+String.valueOf(c.WEEK_OF_MONTH)+String.valueOf(c.YEAR)+".txt";
+
+
+
+            BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path+nomeArquivo));
             String linha = "";
             Scanner in = new Scanner(System.in);
 
@@ -108,7 +113,7 @@ public class Main {
                 linha += dam.getVencimento().toString();
                 linha += adicionaCaracter(dam.getValor().toString().replace(".", ""),"0",15,'E');
                 linha += adicionaCaracter(dam.getParcelas().toString() ,"0",2,'E').substring(0, 2);
-                linha += dam.getCodigoBarras();
+                linha += dam.getCodigoBarras().substring(0,40)+dam.getAno();
                 linha += adicionaCaracter(dam.getProcesso().toString(), "0", 10, 'E');
                 linha += adicionaCaracter(dam.getAno().toString(), "0",4, 'E');
                 linha += adicionaCaracter(dam.getCpfCnpj().toString(), " ", 14, 'D');

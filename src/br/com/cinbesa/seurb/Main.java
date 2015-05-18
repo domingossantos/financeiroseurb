@@ -92,7 +92,7 @@ public class Main {
             }
 
             System.out.println("Qtd "+damsNovas.size());
-            String path = "/home/domingos/tmp/seurb/";
+            String path = "/Users/domingos/temp/seurb/";
 
             Calendar c = Calendar.getInstance();
 

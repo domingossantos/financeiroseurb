@@ -5,14 +5,12 @@
         <class>br.com.cinbesa.seurb.model.TblDam</class>
 
         <properties>
-            <property name="hibernate.connection.url"
-                      value="jdbc:postgresql://localhost:5432/seurb" />
-            <property name="hibernate.connection.username" value="postgres"/>
-            <property name="hibernate.connection.password" value="passwd"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://10.1.200.61:5432/procinternos_db" />
+            <property name="hibernate.connection.username" value="processos"/>
+            <property name="hibernate.connection.password" value="Pr07C1nT&amp;n0"/>
             <property name="hibernate.jdbc.lob.non_contextual_creation" value="true"/>
 
-            <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.PostgreSQL9Dialect" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect" />
 
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="false"/>

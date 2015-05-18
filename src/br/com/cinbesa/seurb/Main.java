@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 
 
@@ -27,7 +28,6 @@ public class Main {
 
 
             String sql = "select \n" +
-                    "	id, \n" +
                     "	nr_guia as guia, \n" +
                     "	to_char(max(dt_emissao),'YYYYMMDD') as emissao, \n" +
                     "	to_char(max(dt_vencimento),'YYYYMMDD') as vencimento , \n" +
@@ -39,27 +39,28 @@ public class Main {
                     "	nr_ano as ano \n" +
                     "from tbl_dam d \n" +
                     "where nr_ano = 2015 and nr_parcela = 1 \n" +
-                    "group by id,nr_guia,cd_orgao, cd_tipodocumento, cd_tributo, nr_sequencia, nr_ano, nr_processo, cd_rota, cd_valor_documento \n" +
+                    "group by nr_guia,cd_orgao, cd_tipodocumento, cd_tributo, nr_sequencia, nr_ano, nr_processo, cd_rota, cd_valor_documento \n" +
                     "order by nr_guia";
 
             //Query q = em.createNamedQuery("TblDam.findByNrAno");
             //Query q = em.createNamedQuery("TblDam.findByNrGuiaNrGuia");
             //q.setMaxResults(50);
 
-            Query q = em.createNativeQuery(sql, DamDTO.class);
+            Query q = em.createNativeQuery(sql);
 
-
+            //q.setMaxResults(50);
             //q.setParameter("nrAno", 2015);
             //q.setParameter("nrGuia", "270100013-5");
 
-            List<DamDTO> dams = q.getResultList();
+            List dams = q.getResultList();
 
             System.out.println("Consulta de DAM 2015");
             System.out.println("Quantidade de DAM: "+dams.size());
 
             List<DamDTO> damsNovas = new ArrayList<DamDTO>();
             DamDTO damTroca = new DamDTO();
-            for(DamDTO dam : dams){
+            for(Object objRow : dams){
+                DamDTO dam = getDam((Object[]) objRow);
 
                 if(damsNovas.size() > 0){
 
@@ -92,7 +93,7 @@ public class Main {
             }
 
             System.out.println("Qtd "+damsNovas.size());
-            String path = "/Users/domingos/temp/seurb/";
+            String path = "/home/gilson/Desktop/";
 
             Calendar c = Calendar.getInstance();
 
@@ -123,6 +124,7 @@ public class Main {
             }
 
             buffWrite.close();
+
         }
         catch (IOException iox){
             System.out.println(iox.getStackTrace());
@@ -150,5 +152,20 @@ public class Main {
         }
 
         return nova;
+    }
+
+    private static DamDTO getDam(Object[] damRow) {
+        DamDTO dam = new DamDTO();
+        dam.setGuia(damRow[0].toString());
+        dam.setEmissao(damRow[1].toString());
+        dam.setVencimento(damRow[2].toString());
+        dam.setValor(new BigDecimal(damRow[3].toString()));
+        dam.setParcelas(new Integer(damRow[4].toString()));
+        dam.setCodigoBarras(damRow[5].toString());
+        dam.setCpfCnpj(damRow[6].toString());
+        dam.setProcesso(new Integer(damRow[7].toString()));
+        dam.setAno(new Integer(damRow[8].toString()));
+
+        return dam;
     }
 }

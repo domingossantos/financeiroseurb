@@ -5,8 +5,6 @@
  */
 package br.com.cinbesa.seurb.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -14,9 +12,7 @@ import java.util.Objects;
  *
  * @author domingos
  */
-@Entity
 public class DamDTO {
-    @Id
     private Integer id;
     
     private String guia;

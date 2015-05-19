@@ -34,17 +34,13 @@ public class Main {
                     "	max(vl_dam) * (select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as valor, \n" +
                     "	(select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as parcelas, \n" +
                     "	max(cd_barras) as codigoBarras, \n" +
-                    "	(select nr_cpf from tbl_processos p where p.nr_ano = d.nr_ano and p.nr_processo = d.nr_processo) as cpfCnpj, \n" +
+                    "	(select CAST (nr_cpf AS varchar) from tbl_processos p where p.nr_ano = d.nr_ano and p.nr_processo = d.nr_processo) as cpfCnpj, \n" +
                     "	nr_processo as processo, \n" +
                     "	nr_ano as ano \n" +
                     "from tbl_dam d \n" +
                     "where nr_ano = 2015 and nr_parcela = 1 \n" +
                     "group by nr_guia,cd_orgao, cd_tipodocumento, cd_tributo, nr_sequencia, nr_ano, nr_processo, cd_rota, cd_valor_documento \n" +
                     "order by nr_guia";
-
-            //Query q = em.createNamedQuery("TblDam.findByNrAno");
-            //Query q = em.createNamedQuery("TblDam.findByNrGuiaNrGuia");
-            //q.setMaxResults(50);
 
             Query q = em.createNativeQuery(sql);
 
@@ -103,9 +99,6 @@ public class Main {
 
             BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path+nomeArquivo));
             String linha = "";
-            Scanner in = new Scanner(System.in);
-
-            //linha = in.nextLine();
 
             for(DamDTO dam : damsNovas){
 
@@ -117,10 +110,8 @@ public class Main {
                 linha += dam.getCodigoBarras().substring(0,40)+dam.getAno();
                 linha += adicionaCaracter(dam.getProcesso().toString(), "0", 10, 'E');
                 linha += adicionaCaracter(dam.getAno().toString(), "0",4, 'E');
-                linha += adicionaCaracter(dam.getCpfCnpj().toString(), " ", 14, 'D');
+                linha += adicionaCaracter(dam.getCpfCnpj().toString(), "0", 14, 'E');
                 buffWrite.append(linha + "\n");
-
-                //System.out.println(linha);
             }
 
             buffWrite.close();

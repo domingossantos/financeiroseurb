@@ -34,8 +34,10 @@ public class DamDTO {
     
     private Integer ano;
 
-    
-    
+    private String usoatividade;
+
+
+
     /**
      * @return the guia
      */
@@ -167,6 +169,14 @@ public class DamDTO {
      */
     public Integer getId() {
         return id;
+    }
+
+    public String getUsoatividade() {
+        return usoatividade;
+    }
+
+    public void setUsoatividade(String usoatividade) {
+        this.usoatividade = usoatividade;
     }
 
     /**

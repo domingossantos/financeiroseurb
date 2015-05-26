@@ -31,20 +31,20 @@ public class Main {
 
 
             String sql = "select \n" +
-                    "nr_guia as guia, \n" +
-                    "to_char(max(dt_emissao),'YYYYMMDD') as emissao, \n" +
-                    "to_char(max(dt_vencimento),'YYYYMMDD') as vencimento ,\n" +
-                    "max(vl_dam) * (select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as valor, \n" +
-                    "(select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as parcelas, \n" +
-                    "max(cd_barras) as codigoBarras, \n" +
-                    "(select CAST (nr_cpf AS varchar) from tbl_processos p where p.nr_ano = d.nr_ano and p.nr_processo = d.nr_processo) as cpfCnpj, \n" +
-                    "nr_processo as processo, nr_ano as ano,\n" +
-                    "(select CAST(cd_documento as varchar) from tbl_usoatividade a where a.cd_usoatividade = d.cd_usoatividade) as cd_usoatividade\n" +
+                    "\tnr_guia as guia, \n" +
+                    "\tto_char((dt_emissao),'YYYYMMDD') as emissao, \n" +
+                    "\tto_char((dt_vencimento),'YYYYMMDD') as vencimento ,\n" +
+                    "\tvl_dam * (select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as valor, \n" +
+                    "\t(select nr_parcelas from tbl_valor_documento v where v.cd_valor_documento = d.cd_valor_documento ) as parcelas, \n" +
+                    "\t(cd_barras) as codigoBarras, \n" +
+                    "\t(select CAST (nr_cpf AS varchar) from tbl_processos p where p.nr_ano = d.nr_ano and p.nr_processo = d.nr_processo) as cpfCnpj, \n" +
+                    "\tnr_processo as processo, nr_ano as ano,\n" +
+                    "\tcd_documento \n" +
                     "from tbl_dam d \n" +
-                    "where nr_parcela = 1 and nr_ano >= 2015\n" +
-                    "group by nr_guia,cd_orgao, cd_tipodocumento, cd_tributo, nr_sequencia, nr_ano, nr_processo, cd_rota, cd_valor_documento,d.cd_usoatividade \n" +
-                    "order by nr_ano, nr_guia";
-
+                    "inner join tbl_usoatividade u on u.cd_usoatividade = d.cd_usoatividade\n" +
+                    "where \n" +
+                    "nr_ano >= 2015 \n" +
+                    "order by d.nr_ano, d.nr_guia\n";
 
 
             Query q = em.createNativeQuery(sql);

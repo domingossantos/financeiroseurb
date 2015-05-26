@@ -25,6 +25,8 @@ public class DamDTO {
     private BigDecimal valor;
     
     private Integer parcelas;
+
+    private Integer parcela;
     
     private String codigoBarras;
     
@@ -92,6 +94,14 @@ public class DamDTO {
      */
     public void setValor(BigDecimal valor) {
         this.valor = valor;
+    }
+
+    public Integer getParcela() {
+        return parcela;
+    }
+
+    public void setParcela(Integer parcela) {
+        this.parcela = parcela;
     }
 
     /**

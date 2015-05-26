@@ -39,7 +39,8 @@ public class Main {
                     "\t(cd_barras) as codigoBarras, \n" +
                     "\t(select CAST (nr_cpf AS varchar) from tbl_processos p where p.nr_ano = d.nr_ano and p.nr_processo = d.nr_processo) as cpfCnpj, \n" +
                     "\tnr_processo as processo, nr_ano as ano,\n" +
-                    "\tcd_documento \n" +
+                    "\tcd_documento, \n" +
+                    "\tnr_parcela \n" +
                     "from tbl_dam d \n" +
                     "inner join tbl_usoatividade u on u.cd_usoatividade = d.cd_usoatividade\n" +
                     "where \n" +
@@ -92,7 +93,8 @@ public class Main {
             System.out.println("Qtd "+damsNovas.size());
             //String path = "/home/gilson/Desktop/";
 
-            String path = "/Users/domingos/temp/";
+            String path = "/home/domingos/tmp/seurb/";
+
 
             SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
             Calendar c = Calendar.getInstance();
@@ -110,6 +112,7 @@ public class Main {
                 linha += dam.getEmissao().toString();
                 linha += dam.getVencimento().toString();
                 linha += adicionaCaracter(dam.getValor().toString().replace(".", ""), "0", 15, 'E');
+                linha += adicionaCaracter(dam.getParcela().toString(), "0", 2,'E').substring(0, 2);
                 linha += adicionaCaracter(dam.getParcelas().toString() ,"0",2,'E').substring(0, 2);
                 linha += dam.getCodigoBarras().substring(0,40)+dam.getAno();
                 linha += adicionaCaracter(dam.getProcesso().toString(), "0", 10, 'E');
@@ -162,6 +165,7 @@ public class Main {
         dam.setProcesso(new Integer(damRow[7].toString()));
         dam.setAno(new Integer(damRow[8].toString()));
         dam.setUsoatividade(damRow[9].toString());
+        dam.setParcela(new Integer(damRow[10].toString()));
         return dam;
     }
 }

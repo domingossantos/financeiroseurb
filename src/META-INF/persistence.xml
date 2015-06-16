@@ -5,7 +5,7 @@
         <class>br.com.cinbesa.seurb.model.TblDam</class>
 
         <properties>
-            <!--Produção-->
+            <!--Produção  Pr07C1nT&n0 -->
             <property name="hibernate.connection.url" value="jdbc:postgresql://10.1.200.61:5432/procinternos_db" />
             <property name="hibernate.connection.username" value="processos"/>
             <property name="hibernate.connection.password" value="Pr07C1nT&amp;n0"/>
